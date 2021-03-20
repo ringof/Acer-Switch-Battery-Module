@@ -1,7 +1,6 @@
 obj-m += battery-module.o
 
-# KERNEL = $(shell uname -r)
-KERNEL = $(shell ls -1 /lib/modules/ | grep -v extramodules | sort -g | tail -n1)
+KERNEL = $(shell uname -r)
 
 all:
 	make -C /lib/modules/$(KERNEL)/build/ M="$(PWD)" modules
